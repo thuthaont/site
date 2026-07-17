@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-primary: #a78bfa;
+  --color-background-light: #f8f7f6;
+  --color-background-dark: #0a0806;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-display);
+  }
+}
+
+.glass {
+  background: rgba(167, 139, 250, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(167, 139, 250, 0.1);
+}
+
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.lavender-leak {
+  background: radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.12) 0%, transparent 70%);
+}
+
+/* Custom smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+.project-description-content strong {
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.15);
+}
+
